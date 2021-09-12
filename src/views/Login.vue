@@ -49,14 +49,13 @@ export default {
   created() {},
   methods: {
     login(formName) {
-      console.log("login");
       this.loginLoading = true;
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          setTimeout(() => {
+          this.$store.dispatch("user/login", this.param).then(() => {
             this.loginLoading = false;
             this.$router.push({ name: "Home" });
-          }, 500);
+          });
         } else {
           return false;
         }

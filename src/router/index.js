@@ -1,14 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Layout from '@/Layout/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/Home.vue')
-  },
   {
     path: '/login',
     name: 'Login',
@@ -18,6 +14,21 @@ const routes = [
     name:'NotFund',
     component:() => import('@/views/Error/404.vue')
   }
+]
+export const asyncRoutes = [
+  {
+    path: '/',
+    name: 'Root',
+    redirect:'/home',
+    component: Layout,
+    children:[
+      {
+        path:'home',
+        name:"Home",
+        component:() => import('@/views/Home.vue')
+      }
+    ]
+  },
 ]
 
 const router = new VueRouter({
