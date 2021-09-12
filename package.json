@@ -8,6 +8,12 @@
     "lint": "vue-cli-service lint",
     "lint:fix": "vue-cli-service lint --fix"
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "vue-cli-service lint --fix"
+  },
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",
