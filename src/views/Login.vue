@@ -1,5 +1,5 @@
 <template>
-  <div class="login h_100 flex flex_center">
+  <div class="login h_100 flex flex_justify_center">
     <div class="inner_box">
       <div class="title c_fff bold t_center">系统登录</div>
       <el-form ref="form" :model="param" :rules="rules">
@@ -55,7 +55,8 @@ export default {
         if (valid) {
           setTimeout(() => {
             this.loginLoading = false;
-          }, 2000);
+            this.$router.push({ name: "Home" });
+          }, 500);
         } else {
           return false;
         }
@@ -69,6 +70,7 @@ export default {
   background-color: #2d3a4b;
   .inner_box {
     width: 450px;
+    margin-top: 260px;
     .title {
       padding-bottom: 40px;
       font-size: 26px;
