@@ -9,6 +9,7 @@
     "lint:fix": "vue-cli-service lint --fix"
   },
   "gitHooks": {
+    "commit-msg":"node script/verify-commit-msg.js",
     "pre-commit": "vue-cli-service lint --fix"
   },
   "dependencies": {
@@ -27,6 +28,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "yorkie": "^2.0.0"
   }
 }
