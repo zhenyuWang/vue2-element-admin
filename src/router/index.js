@@ -4,18 +4,21 @@ import Layout from '@/Layout/index.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+export const routes = [
   {
     path: '/login',
     name: 'Login',
     component: () => import('@/views/Login.vue')
-  },{
-    path:'*',
-    name:'NotFund',
-    component:() => import('@/views/Error/404.vue')
+  },
+  {
+    path: "/404",
+    name: "NotFund",
+    hidden: true,
+    meta: { notNeedAuth: true },
+    component: () => import("@/views/Error/404.vue"),
   }
 ]
-export const asyncRoutes = [
+export const permissionRoutes = [
   {
     path: '/',
     name: 'Root',
@@ -28,7 +31,11 @@ export const asyncRoutes = [
         component:() => import('@/views/Home.vue')
       }
     ]
-  },
+  },{
+    path:'*',
+    name:'Error',
+    redirect: "/404",
+  }
 ]
 
 const router = new VueRouter({

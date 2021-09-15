@@ -1,5 +1,6 @@
-import router,{asyncRoutes} from '@/router'
+import router,{permissionRoutes} from '@/router'
 import store from '@/store'
+import {apiLogin} from '@/api/user'
 
 // sessionStorage中获取store并更新
 function updateStoreBySessionStorage() {
@@ -24,21 +25,24 @@ export default {
   getPermissionRoute() {
     return new Promise(resolve => {
         // 动态添加可访问的路由
-        router.addRoutes(asyncRoutes)
+        permissionRoutes.forEach((item) => {
+          router.addRoute(item);
+        });
         resolve()
     })
   },
   // 登录
     login({commit,dispatch},data){
       return new Promise((resolve) => {
-        setTimeout(() => {
-          commit('SET_USER_INFO',{name:data.name,avatar:'https://img0.baidu.com/it/u=3233551726,336273710&fm=26&fmt=auto&gp=0.jpg'})
+        apiLogin(data).then(res => {
+          console.log('res',res);
+          commit('SET_USER_INFO',res.body)
           // 动态添加可访问的路由
           dispatch('getPermissionRoute')
           // / 添加事件 -> 页面刷新前将store信息存储到sessionStorage
           window.addEventListener("beforeunload", updateStoreBySessionStorage);
           resolve('success')
-        },200)
+        })
       })
     }
   },

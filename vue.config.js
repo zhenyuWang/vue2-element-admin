@@ -25,17 +25,17 @@ module.exports = {
     https: false,
     hotOnly: false,
     // 配置代理，解决跨域问题
-    proxy: {
-      [process.env.VUE_APP_BASE_API]: {
-        // 测试环境
-        target: "http://x.x.x.x:xxxx",
-        changeOrigin: true,
-        ws: false,
-        pathRewrite: {
-          ["^" + process.env.VUE_APP_BASE_API]: ""
-        }
-      }
-    }
+    // proxy: {
+    //   [process.env.VUE_APP_BASE_API]: {
+    //     // 测试环境
+    //     target: "http://x.x.x.x:xxxx",
+    //     changeOrigin: true,
+    //     ws: false,
+    //     pathRewrite: {
+    //       ["^" + process.env.VUE_APP_BASE_API]: ""
+    //     }
+    //   }
+    // }
   },
   configureWebpack: {
     resolve: {

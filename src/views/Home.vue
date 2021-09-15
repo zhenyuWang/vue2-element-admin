@@ -24,7 +24,6 @@ export default {
   },
   created() {
     const userInfo = this.$store.getters.userInfo;
-    console.log("userInfo", userInfo);
     if (userInfo) {
       this.userInfo = userInfo;
     }
