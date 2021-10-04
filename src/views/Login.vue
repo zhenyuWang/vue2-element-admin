@@ -69,10 +69,25 @@ export default {
   background-color: #2d3a4b;
   .inner_box {
     width: 450px;
-    margin-top: 260px;
+    margin-top: 220px;
     .title {
       padding-bottom: 40px;
-      font-size: 26px;
+      font-size: 30px;
+    }
+    /deep/ .el-form-item {
+        background-color: #283443;
+        border: 1px solid #434c58;
+        border-radius: 4px;
+        .el-input {
+          input{
+            height: 50px;
+            padding-right: 30px;
+            font-size: 16px;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+          }
+        }
     }
   }
 }

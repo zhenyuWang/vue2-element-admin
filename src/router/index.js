@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Layout from '@/Layout/index.vue'
+import Layout from '@/layout/index.vue'
+import store from '@/store'
+
+import list from './modules/list'
 
 Vue.use(VueRouter)
 
@@ -8,6 +11,8 @@ export const routes = [
   {
     path: '/login',
     name: 'Login',
+    hidden:true,
+    meta: { notNeedAuth: true },
     component: () => import('@/views/Login.vue')
   },
   {
@@ -28,12 +33,16 @@ export const permissionRoutes = [
       {
         path:'home',
         name:"Home",
+        meta:{title:'首页',icon:'el-icon-s-home',needCache:true,fixed:true},
         component:() => import('@/views/Home.vue')
       }
     ]
-  },{
+  },
+  list,
+  {
     path:'*',
     name:'Error',
+    hidden:true,
     redirect: "/404",
   }
 ]
@@ -43,5 +52,34 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// 重置路由
+export function resetRouter() {
+  const newRouter = new VueRouter({
+    scrollBehavior: () => ({ y: 0 }),
+    routes: routes
+  })
+  router.matcher = newRouter.matcher
+}
+
+// 路由前置守卫
+router.beforeEach((to,from,next) =>{
+  // 免登录白名单
+  const whiteList = ['Login','NotFund']
+  // 如果未登录 并且目标路由不在白名单
+  if(!store.getters.userInfo.name&&whiteList.indexOf(to.name)===-1) next({name:'Login'})
+  else next()
+})
+
+// 路由后置守卫
+router.afterEach((to) => {
+  // 添加路由缓存
+  if (to.name && to.meta.needCache) {
+    store.commit("tagsView/ADD_CACHE_VIEW", to.name);
+  }
+  // 添加访问过路由
+  if (to.meta && !to.meta.notNeedAuth)
+    store.commit("tagsView/ADD_VISITED_VIEW", to);
+});
 
 export default router

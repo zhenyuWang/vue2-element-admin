@@ -1,13 +1,6 @@
 <template>
-  <div class="home">
-    Home
-    <div>
-      <p>name:{{ userInfo.name }}</p>
-      <p>
-        头像:
-        <img :src="userInfo.avatar" alt="" />
-      </p>
-    </div>
+  <div class="home pt_20 t_center fontsize_20">
+    {{message}}
   </div>
 </template>
 <script>
@@ -16,26 +9,8 @@ export default {
   components: {},
   data() {
     return {
-      userInfo: {
-        name: "",
-        avatar: "",
-      },
+      message:'Welcome to vue2-elment-admin by wzy'
     };
-  },
-  created() {
-    const userInfo = this.$store.getters.userInfo;
-    if (userInfo) {
-      this.userInfo = userInfo;
-    }
   },
 };
 </script>
-<style lang="scss" scoped>
-.home {
-  color: red;
-  img {
-    width: 100px;
-    height: 100px;
-  }
-}
-</style>

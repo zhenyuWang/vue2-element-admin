@@ -1,4 +1,4 @@
-import router, { routes, permissionRoutes } from "@/router";
+import router, { routes, permissionRoutes,resetRouter } from "@/router";
 
 export default {
   namespaced: true,
@@ -24,9 +24,7 @@ export default {
     },
     // 重置路由
     resetRoute(context) {
-      permissionRoutes.forEach((item) => {
-        if (item.name) router.removeRoute(item.name);
-      });
+      resetRouter();
       context.commit("setRoutes", []);
     },
   },

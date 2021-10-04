@@ -1,16 +1,12 @@
+// 内容页主体架子
 <template>
-  <div class="">
-    layout
-    <router-view></router-view>
-  </div>
+  <AppMain />
 </template>
 <script>
+import AppMain from "./components/AppMain.vue";
+import ResizeMixin from "./mixin/resize";
 export default {
-  name: "",
-  data() {
-    return {};
-  },
-  created() {},
-  methods: {},
+  components: { AppMain },
+  mixins: [ResizeMixin],
 };
 </script>
