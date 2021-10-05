@@ -1,7 +1,7 @@
 <template>
   <div>
       <el-table
-        :data="tableData"
+        :data="list"
         stripe
         v-loading='loading'
         border>
@@ -34,7 +34,7 @@
       </el-table>
       <el-pagination
         layout="prev, pager, next"
-        :current-page='param.pageNo'
+        :current-page.sync="param.pageNo"
         :page-size='param.pageSize'
         :total="totalCount"
         @current-change="getList">
@@ -42,6 +42,7 @@
       </div>
 </template>
 <script>
+import {apiGetList} from '@/api/list'
 export default {
   name:'List1',
   components: {},
@@ -52,26 +53,8 @@ export default {
         pageNo:1,
         pageSize:10
       },
-      tableData: [
-        {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }
-      ],
-      totalCount:20,
+      list: [],
+      totalCount:0,
     }
   },
   created(){
@@ -80,9 +63,12 @@ export default {
   methods:{
     getList(){
       this.loading = true;
-      setTimeout(() => {
-        this.loading = false
-      },1000)
+      apiGetList(this.param).then(res => {
+        this.totalCount = res.body.count;
+        this.list =res.body.list;
+      }).finally(() => {
+        this.loading = false;
+      })
     },
     detail(item,index){
       console.log('item',item);
