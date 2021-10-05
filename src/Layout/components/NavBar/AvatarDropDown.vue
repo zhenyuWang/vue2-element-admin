@@ -20,7 +20,7 @@ export default {
   },
   methods:{
     handleClick(command){
-      if(command==='userInfo') this.getUserInfo()
+      if(command==='userInfo') this.goUserInfo()
       else if(command==='changePassword') this.changePassword()
       else if(command==='logout') this.logout()
     },

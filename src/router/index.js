@@ -4,6 +4,7 @@ import Layout from '@/layout/index.vue'
 import store from '@/store'
 
 import list from './modules/list'
+import personCenter from './modules/personCenter'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,7 @@ export const permissionRoutes = [
     ]
   },
   list,
+  personCenter,
   {
     path:'*',
     name:'Error',
