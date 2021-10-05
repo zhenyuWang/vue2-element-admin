@@ -1,6 +1,5 @@
 
 import {apiLogin,apiLogout} from '@/api/user'
-import updateStoreBySessionStorage from '@/utils/updateStoreBySessionStorage'
 export default {
   namespaced: true,
   state: {
@@ -23,8 +22,6 @@ export default {
           commit('SET_USER_INFO',res.body)
           // 动态添加可访问的路由
           await dispatch('permission/handleRoutes',null,{root:true})
-          // 添加事件 -> 页面刷新前将store信息存储到sessionStorage
-          window.addEventListener("beforeunload", updateStoreBySessionStorage);
           resolve('success')
         })
       })
@@ -51,9 +48,6 @@ export default {
           commit("tagsView/CLEAR_FIXED_VISITED_VIEW", null, {
             root: true,
           });
-          // 添加事件 -> 页面刷新前将store信息存储到sessionStorage
-          window.removeEventListener("beforeunload", updateStoreBySessionStorage);
-          sessionStorage.removeItem('store')
           resolve('success')
         })
       })

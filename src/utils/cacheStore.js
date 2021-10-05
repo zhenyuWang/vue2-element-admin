@@ -8,4 +8,9 @@ if (sessionStore && sessionStore !== 'undefined') {
     store.dispatch('permission/handleRoutes')
   }
 }
+
+//在页面刷新时将vuex里的信息保存到sessionStorage里
+window.addEventListener("beforeunload", () => {
+  sessionStorage.setItem("store", JSON.stringify(store.state));
+});
 export default store;

@@ -43,9 +43,15 @@ export default {
     },
     // 删除其他访问过的路由
     DELETE_OTHER_VISITED_VIEW(state, view) {
-      console.log('fixedVisitedViews',state.fixedVisitedViews);
-      state.visitedViews = [...state.fixedVisitedViews, view];
-      state.cachedViews = [...state.fixedVisitedViews, view];
+      // 如果当前路由在固定路由中
+      if(state.fixedVisitedViews.find(item => item.name===view.name)){
+        state.visitedViews = [...state.fixedVisitedViews];
+        state.cachedViews = [...state.fixedVisitedViews];
+      }else{
+        state.visitedViews = [...state.fixedVisitedViews, view];
+        state.cachedViews = [...state.fixedVisitedViews, view];
+      }
+      
     },
     // 清空访问过的路由
     CLEAR_VISITED_VIEW(state) {
