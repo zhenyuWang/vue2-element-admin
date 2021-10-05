@@ -7,6 +7,18 @@ const curryRequest = (url, method,data) => {
 export function apiGetList(data){
   return curryRequest('list','post',data)
 }
+// 获取详情
+export function apiGetDetail(data){
+  return curryRequest('detail','post',data)
+}
+// 编辑
+export function apiUpdate(data){
+  return curryRequest('update','post',data)
+}
+// 删除
+export function apiDel(data){
+  return curryRequest('del','post',data)
+}
 
 
 

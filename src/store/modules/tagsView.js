@@ -36,9 +36,9 @@ export default {
       
     },
     // 删除访问过的路由
-    DELETE_VISITED_VIEW(state, view) {
+    DELETE_VISITED_VIEW(state, name) {
       state.visitedViews = state.visitedViews.filter((item) => {
-        return item.name !== view.name;
+        return item.name !== name;
       });
     },
     // 删除其他访问过的路由
@@ -67,7 +67,7 @@ export default {
     },
     // 删除访问过的路由
     deleteVisitedView(context, view) {
-      context.commit("DELETE_VISITED_VIEW", view);
+      context.commit("DELETE_VISITED_VIEW", view.name);
       context.commit("DELETE_CACHE_VIEW", view.name);
     },
   },

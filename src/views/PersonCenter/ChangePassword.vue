@@ -47,6 +47,9 @@ export default {
     }
   },
   methods:{
+    cancel(){
+      this.$router.push({name:'Home'})
+    },
     submit(){
       this.$refs.form.validate((valid) => {
         if (valid) {

@@ -48,7 +48,7 @@ export default {
   methods:{
     // 跳转目标路由
     goTargetView(view){
-      this.$router.push(view);
+      this.$router.push(view.fullPath);
     },
      // 删除已访问路由
     delTargetVisited(view){

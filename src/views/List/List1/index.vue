@@ -26,9 +26,9 @@
         <el-table-column
           label="操作">
           <template slot-scope="scope">
-            <el-button type='success' size='small' @click="detail(scope.row,scope.$index)">详情</el-button>
-            <el-button type='primary' size='small' @click="edit">编辑</el-button>
-            <el-button type='danger' size='small' @click="del">删除</el-button>
+            <el-button type='success' size='small' @click="detail(scope.row.id)">详情</el-button>
+            <el-button type='primary' size='small' @click="edit(scope.row.id)">编辑</el-button>
+            <el-button type='danger' size='small' @click="del(scope.row.id)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -42,7 +42,7 @@
       </div>
 </template>
 <script>
-import {apiGetList} from '@/api/list'
+import {apiGetList,apiDel} from '@/api/list'
 export default {
   name:'List1',
   components: {},
@@ -70,15 +70,17 @@ export default {
         this.loading = false;
       })
     },
-    detail(item,index){
-      console.log('item',item);
-      console.log('index',index);
+    detail(id){
+      this.$router.push({name:'ListDetail',params:{id}})
     },
-    edit(){
-      console.log('edit');
+    edit(id){
+      this.$router.push({name:'ListEdit',params:{id}})
     },
-    del(){
-      console.log('del');
+    del(id){
+      apiDel({id}).then(() => {
+        this.$message.success('删除成功！')
+        this.getList();
+      })
     }
   }
 }

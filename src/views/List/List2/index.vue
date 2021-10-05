@@ -20,16 +20,7 @@
         <el-table-column
           prop="address"
           label="地址"
-          align='center'
-          width='300'>
-        </el-table-column>
-        <el-table-column
-          label="操作">
-          <template slot-scope="scope">
-            <el-button type='success' size='small' @click="detail(scope.row,scope.$index)">详情</el-button>
-            <el-button type='primary' size='small' @click="edit">编辑</el-button>
-            <el-button type='danger' size='small' @click="del">删除</el-button>
-          </template>
+          align='center'>
         </el-table-column>
       </el-table>
       <el-pagination
@@ -70,16 +61,6 @@ export default {
         this.loading = false;
       })
     },
-    detail(item,index){
-      console.log('item',item);
-      console.log('index',index);
-    },
-    edit(){
-      console.log('edit');
-    },
-    del(){
-      console.log('del');
-    }
   }
 }
 </script>
