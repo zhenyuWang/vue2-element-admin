@@ -4,7 +4,7 @@ export default {
   namespaced: true,
   state: {
     userInfo:{
-      userId:'001',
+      userId:'',
       name:'',
       avatar:''
     },

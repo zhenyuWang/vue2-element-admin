@@ -4,7 +4,7 @@ const sessionStore = sessionStorage.getItem("store");
 if (sessionStore && sessionStore !== 'undefined') {
   store.replaceState(Object.assign({}, store.state, JSON.parse(sessionStore)));
   // 如果已经登录，刷新后初始化路由
-  if (store.getters.userInfo&&store.getters.userInfo.name) {
+  if (store.getters.userInfo&&store.getters.userInfo.userId) {
     store.dispatch('permission/handleRoutes')
   }
 }

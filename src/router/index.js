@@ -25,20 +25,20 @@ export const routes = [
   }
 ]
 export const permissionRoutes = [
-  {
-    path: '/',
-    name: 'Root',
-    redirect:'/home',
-    component: Layout,
-    children:[
-      {
-        path:'home',
-        name:"Home",
-        meta:{title:'首页',icon:'el-icon-s-home',needCache:true,fixed:true},
-        component:() => import('@/views/Home.vue')
-      }
-    ]
-  },
+{
+  path: '/',
+  name: 'Root',
+  redirect:'/home',
+  component: Layout,
+  children:[
+    {
+      path:'home',
+      name:"Home",
+      meta:{title:'首页',icon:'el-icon-s-home',needCache:true,fixed:true},
+      component:() => import('@/views/Home.vue')
+    }
+  ]
+},
   list,
   personCenter,
   {
@@ -69,7 +69,7 @@ router.beforeEach((to,from,next) =>{
   // 免登录白名单
   const whiteList = ['Login','NotFund']
   // 如果未登录 并且目标路由不在白名单
-  if(!store.getters.userInfo.name&&whiteList.indexOf(to.name)===-1) next({name:'Login'})
+  if(!store.getters.userInfo.userId&&whiteList.indexOf(to.name)===-1) next({name:'Login'})
   else next()
 })
 
