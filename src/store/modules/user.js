@@ -4,9 +4,10 @@ export default {
   namespaced: true,
   state: {
     userInfo:{
+      userId:'001',
       name:'',
       avatar:''
-    }
+    },
   },
   mutations: {
     SET_USER_INFO(state,data){

@@ -11,4 +11,10 @@ export function apiLogin(data){
 export function apiLogout(){
   return curryRequest('logout','get')
 }
+// 修改密码
+export function apiChangePassword(data){
+  return curryRequest('changePassword','post',data)
+}
+
+
 

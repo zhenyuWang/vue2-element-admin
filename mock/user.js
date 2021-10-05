@@ -1,5 +1,6 @@
 // 引入mockjs
 const Mock = require('mockjs')
+// 登录
 Mock.mock('/api/user/login', 'post', (req) => {
   const data = JSON.parse(req.body).body;
   return {
@@ -12,6 +13,7 @@ Mock.mock('/api/user/login', 'post', (req) => {
     }
   }
 })
+// 退出登录
 Mock.mock('/api/user/logout', 'get', () => {
   return {
     header:{
@@ -19,5 +21,15 @@ Mock.mock('/api/user/logout', 'get', () => {
     },
     body:{
     }
+  }
+})
+
+// 修改密码
+Mock.mock('/api/user/changePassword', 'post', () => {
+  return {
+    header:{
+      code:0
+    },
+    body:{}
   }
 })
