@@ -77,9 +77,18 @@ router.afterEach((to) => {
   if (to.name && to.meta.needCache) {
     store.commit("tagsView/ADD_CACHE_VIEW", to.name);
   }
-  // 添加访问过路由
+  // 添加访问过路由  直接存入to对象会导致JSON.stringfy的时候因为循环引用报错
   if (to.meta && !to.meta.notNeedAuth)
-    store.commit("tagsView/ADD_VISITED_VIEW", to);
+    if(to.meta.fixed) store.dispatch('tagsView/addFixedVisitedView',{
+      name:to.name,
+      fullPath:to.fullPath,
+      meta:to.meta
+    })
+    else store.commit("tagsView/ADD_VISITED_VIEW", {
+      name:to.name,
+      fullPath:to.fullPath,
+      meta:to.meta
+    });
 });
 
 export default router

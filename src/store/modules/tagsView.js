@@ -33,6 +33,7 @@ export default {
     // 添加访问过的路由
     ADD_VISITED_VIEW(state, view) {
       if(!state.visitedViews.find(item => item.name===view.name)) state.visitedViews.push(view);
+      
     },
     // 删除访问过的路由
     DELETE_VISITED_VIEW(state, view) {
@@ -42,17 +43,14 @@ export default {
     },
     // 删除其他访问过的路由
     DELETE_OTHER_VISITED_VIEW(state, view) {
-      state.visitedViews.forEach((item) => {
-        if (item.name !== view.name) {
-          const index = state.cachedViews.indexOf(item.name);
-          if (index > -1) state.cachedViews.splice(index, 1);
-        }
-      });
+      console.log('fixedVisitedViews',state.fixedVisitedViews);
       state.visitedViews = [...state.fixedVisitedViews, view];
+      state.cachedViews = [...state.fixedVisitedViews, view];
     },
     // 清空访问过的路由
     CLEAR_VISITED_VIEW(state) {
       state.visitedViews = [...state.fixedVisitedViews];
+      state.cachedViews = [...state.fixedVisitedViews];
     },
   },
   actions: {

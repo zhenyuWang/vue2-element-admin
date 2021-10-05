@@ -1,6 +1,6 @@
 <template>
   <div class="visited_views flex flex_align_center">
-    <template v-for="view in visitedViews">
+    <template v-for="view in $store.getters.visitedViews">
       <div
         class="fontsize_12 c_666 pointer"
         :key="view.name"
@@ -56,7 +56,7 @@ export default {
       // 如果删除的是active路由，跳转访问路由最后一个
       if (view.name === this.$route.name) {
         const visitedViews = this.$store.getters.visitedViews;
-        this.$router.push(visitedViews[visitedViews.length - 1]);
+        if(visitedViews&&visitedViews.length) this.$router.push(visitedViews[visitedViews.length - 1]);
       }
     },
     // 隐藏右键菜单
@@ -85,7 +85,7 @@ export default {
         this.mouseRightView.name
       );
       if (this.mouseRightView.name === this.$route.name) {
-        // await this.$router.push({ name: "Home" });
+        await this.$router.push({ name: "NotFund" });
         this.$router.replace(this.mouseRightView);
       } else {
         this.$router.push(this.mouseRightView);
@@ -107,13 +107,8 @@ export default {
       this.$store.commit("tagsView/CLEAR_CACHE_VIEW");
       this.$store.commit("tagsView/CLEAR_VISITED_VIEW");
       const visitedViews = this.$store.getters.visitedViews;
-      this.$router.push(visitedViews[visitedViews.length - 1]);
+      if(visitedViews&&visitedViews.length) this.$router.push(visitedViews[visitedViews.length - 1]);
     }
-  },
-  computed: {
-    visitedViews() {
-      return this.$store.getters.visitedViews;
-    },
   },
 };
 </script>
