@@ -11,6 +11,7 @@ export default {
   },
   mutations: {
     SET_USER_INFO(state,data){
+      state.userInfo.userId = data.userId;
       state.userInfo.name = data.name;
       state.userInfo.avatar = data.avatar;
     }
