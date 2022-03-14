@@ -3,14 +3,14 @@
 [简体中文](./README.md) | English
 
 #### Description
-A background management system based on Vue2+Vue Router+Vuex+ElementUI+axios
+A background management system development framework based on Vue2+Vue Router+Vuex+ElementUI+axios.
 
 #### Software Architecture
 Vue2+Vue Router+Vuex+ElementUI+axios
 
 #### Installation
 
-yarn  
+yarn
 
 #### Start service
 yarn dev
@@ -18,4 +18,3 @@ yarn dev
 #### Corresponding article
 
 [从零到一搭建Vue2后台管理系统](https://juejin.cn/post/7015537495945248804)
-
