@@ -18,7 +18,6 @@
 import {apiGetDetail} from '@/api/list'
 export default {
   name:'ListDetail',
-  components: {},
   props:{
     id:{
       type:String,

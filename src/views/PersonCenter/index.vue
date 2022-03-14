@@ -13,7 +13,6 @@
 <script>
 export default {
   name:'UserInfo',
-  components: {},
   data () {
     return {
       userInfo:this.$store.getters.userInfo

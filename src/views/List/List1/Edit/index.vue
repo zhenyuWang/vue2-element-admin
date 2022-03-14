@@ -19,7 +19,6 @@
 import {apiGetDetail,apiUpdate} from '@/api/list'
 export default {
   name:'ListEdit',
-  components: {},
   props:{
     id:{
       type:String,

@@ -27,7 +27,6 @@
 import {apiChangePassword} from '@/api/user'
 export default {
   name:'ChangePassword',
-  components: {},
   data () {
     return {
       param:{
@@ -41,14 +40,14 @@ export default {
         ],
         newPassword: [
           { required: true, message: "请输入新密码", trigger: "blur" },
-        ],  
+        ],
       },
       submitLoading:false
     }
   },
   methods:{
     cancel(){
-      this.$router.push({name:'Home'})
+      this.$router.go(-1)
     },
     submit(){
       this.$refs.form.validate((valid) => {

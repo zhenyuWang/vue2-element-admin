@@ -6,10 +6,9 @@
 <script>
 export default {
   name: "Home",
-  components: {},
   data() {
     return {
-      message:'Welcome to vue2-elment-admin by wzy'
+      message:'Welcome to vue2-elment-admin by runing snail!'
     };
   },
 };

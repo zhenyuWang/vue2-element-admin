@@ -36,7 +36,6 @@
 import {apiGetList} from '@/api/list'
 export default {
   name:'List2',
-  components: {},
   data () {
     return {
       loading:false,

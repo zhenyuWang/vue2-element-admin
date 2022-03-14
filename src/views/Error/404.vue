@@ -8,11 +8,6 @@
 </template>
 <script>
 export default {
-  name: "NotFund",
-  data() {
-    return {};
-  },
-  created() {},
-  methods: {},
+  name: "NotFund"
 };
 </script>

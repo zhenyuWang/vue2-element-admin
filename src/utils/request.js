@@ -4,7 +4,7 @@ import store from '@/store'
 
 // create an axios instance
 const service = axios.create({
-   // url = base url + request url
+  // url = base url + request url
   baseURL: process.env.VUE_APP_BASE_API,
   // request timeout
   timeout: 10000
@@ -12,11 +12,11 @@ const service = axios.create({
 
 // request interceptor
 service.interceptors.request.use(
-  config => {
+  (config) => {
     // do something before request is sent
     return config
   },
-  error => {
+  (error) => {
     // do something with request error
     return Promise.reject(error)
   }
@@ -24,9 +24,9 @@ service.interceptors.request.use(
 
 // response interceptor
 service.interceptors.response.use(
-  response => {
+  (response) => {
     const res = response.data
-    // if the custom code is not 0, it is judged as an error.
+    // 返回 code 不为 0，说明发生错误
     if (res.header.code !== 0) {
       Message({
         message: res.header.msg || 'Error',
@@ -34,8 +34,8 @@ service.interceptors.response.use(
         duration: 5 * 1000
       })
 
-      // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-      if (res.header.code === 50008 || res.header.code === 50012 || res.header.code === 50014) {
+      // 约定 5000 为未登录或登录状态失效
+      if (res.header.code === 5000) {
         // to re-login
         MessageBox.confirm('您已经退出登录状态，您可以点击取消留在当前页面或者重新登录', {
           confirmButtonText: '重新登录',
@@ -52,7 +52,7 @@ service.interceptors.response.use(
       return res
     }
   },
-  error => {
+  (error) => {
     Message({
       message: error.header ? error.header.msg : '请求超时，请稍后重试',
       type: 'error',
@@ -67,7 +67,7 @@ service.interceptors.response.use(
  * @param method 接口请求方式
  * @param data data下的其他数据体
  */
-const request = (url, method,data) => {
+const request = (url, method, data) => {
   return service({
     url,
     method,

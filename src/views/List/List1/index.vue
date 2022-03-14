@@ -45,7 +45,6 @@
 import {apiGetList,apiDel} from '@/api/list'
 export default {
   name:'List1',
-  components: {},
   data () {
     return {
       loading:false,
