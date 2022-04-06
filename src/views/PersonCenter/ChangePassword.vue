@@ -1,6 +1,6 @@
 <template>
   <div class="change_password">
-    <div class="fontsize_20 t-center">修改密码</div>
+    <div class="font-size-20 t-center">修改密码</div>
     <el-form
       ref="form"
       :model="param"
@@ -15,7 +15,7 @@
         <el-input v-model="param.newPassword" />
       </el-form-item>
     </el-form>
-    <div class="flex flex_justify_center">
+    <div class="flex flex-justify-center">
       <el-button @click="cancel">取消</el-button>
       <el-button type="primary" :loading="submitLoading" @click="submit"
         >确定</el-button
@@ -71,7 +71,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .change_password {
-  > .fontsize_20 {
+  > .font-size-20 {
     padding: 100px 0 30px;
   }
   .el-form {

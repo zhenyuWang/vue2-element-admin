@@ -1,7 +1,7 @@
 <template>
   <div class="collapse_box pr_20 pointer" @click="changeCollapse">
-    <span v-if="isCollapse" class="fontsize_20 el-icon-s-unfold"></span>
-    <span v-else class="fontsize_20 el-icon-s-fold"></span>
+    <span v-if="isCollapse" class="font-size-20 el-icon-s-unfold"></span>
+    <span v-else class="font-size-20 el-icon-s-fold"></span>
   </div>
 </template>
 <script>

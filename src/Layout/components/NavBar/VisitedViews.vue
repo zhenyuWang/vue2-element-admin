@@ -1,7 +1,7 @@
 <template>
-  <div class="visited_views flex flex_align_center">
+  <div class="visited_views flex flex-align-center">
     <div
-      class="fontsize_12 c_666 pointer"
+      class="font-size-12 c_666 pointer"
       v-for="view in $store.getters.visitedViews"
       :key="view.name"
       :class="{ active: $route.name === view.name }"
@@ -18,7 +18,7 @@
     <ul
       v-show="visible"
       ref="menu"
-      class="menu bg_fff fontsize_13 pointer c_333"
+      class="menu bg_fff font-size-13 pointer c_333"
     >
       <li @click="refresh">刷新</li>
       <li

@@ -1,7 +1,7 @@
 <template>
   <div class="box t-center">
     <img src="@/assets/img/snail.png" alt="" />
-    <h1 class="home pt_20 t-center fontsize_20 c-3477F2">
+    <h1 class="home pt_20 t-center font-size-20 c-3477F2">
       {{ message }}
     </h1>
   </div>

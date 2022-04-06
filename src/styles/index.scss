@@ -172,34 +172,34 @@ li {
 .c-3477F2 {
   color: #3477f2;
 }
-.border_t {
+.border-t {
   border-top: 1px solid #dedede;
 }
-.border_r {
+.border-r {
   border-right: 1px solid #dedede;
 }
-.border_b {
+.border-b {
   border-bottom: 1px solid #dedede;
 }
-.border_l {
+.border-l {
   border-left: 1px solid #dedede;
 }
-.fontsize_12 {
+.font-size-12 {
   font-size: 12px;
 }
-.fontsize_13 {
+.font-size-13 {
   font-size: 13px;
 }
-.fontsize_14 {
+.font-size-14 {
   font-size: 14px;
 }
-.fontsize_16 {
+.font-size-16 {
   font-size: 16px;
 }
-.fontsize_18 {
+.font-size-18 {
   font-size: 18px;
 }
-.fontsize_20 {
+.font-size-20 {
   font-size: 20px;
 }
 .flex {
@@ -211,27 +211,27 @@ li {
   align-items: center;
 }
 // 垂直对齐 居中
-.flex_align_center {
+.flex-align-center {
   align-items: center;
 }
 // 垂直对齐 底部
-.flex_align_bottom {
+.flex-align-bottom {
   align-items: flex-end;
 }
 // 水平对齐 两端对齐
-.flex_justify_between {
+.flex-justify-between {
   justify-content: space-between;
 }
 // 水平对齐 项目居中对齐
-.flex_justify_center {
+.flex-justify-center {
   justify-content: center;
 }
 // 水平对齐 项目环绕对齐
-.flex_justify_around {
+.flex-justify-around {
   justify-content: space-around;
 }
 // 水平对齐 项目靠右对齐
-.flex_content_end {
+.flex-content-end {
   justify-content: flex-end;
 }
 // 子元素垂直排列
@@ -239,6 +239,6 @@ li {
   flex-direction: column;
 }
 // 子元素换行
-.flex_wrap {
+.flex-wrap {
   flex-wrap: wrap;
 }

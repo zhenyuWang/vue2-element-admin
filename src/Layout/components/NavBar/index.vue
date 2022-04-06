@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="navbar flex flex_align_center flex_justify_between border_b">
-      <div class="flex flex_align_center">
+    <div class="navbar flex flex-align-center flex-justify-between border-b">
+      <div class="flex flex-align-center">
         <Collapse />
         <Breadcrumb />
       </div>

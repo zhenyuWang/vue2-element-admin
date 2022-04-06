@@ -1,11 +1,11 @@
 <template>
   <div class="user_info pt_20">
-    <div class="pb-20 flex fontsize_18">
+    <div class="pb-20 flex font-size-18">
       <div class="label">姓名：</div>
       <div>{{ userInfo.name }}</div>
     </div>
     <div class="flex">
-      <div class="label fontsize_18">头像：</div>
+      <div class="label font-size-18">头像：</div>
       <img :src="userInfo.avatar" alt="" />
     </div>
   </div>
