@@ -3,17 +3,21 @@
 [简体中文](./README.md) | English
 
 #### Description
-A background management system development framework based on Vue2+Vue Router+Vuex+ElementUI+axios.
+A background management system development framework based on `Vue2+Vue Router+Vuex+ElementUI+axios`.
 
 #### Software Architecture
-Vue2+Vue Router+Vuex+ElementUI+axios
+`Vue2+Vue Router+Vuex+ElementUI+axios`
 
 #### Installation
 
+```shell
 yarn
+```
 
 #### Start service
+```shell
 yarn dev
+```
 
 #### Corresponding article
 
