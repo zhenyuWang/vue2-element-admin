@@ -2,11 +2,12 @@
   <div>
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <transition-group name="breadcrumb" mode="out-in">
-        <template v-for="item in titleList">
-          <el-breadcrumb-item :to="item.path"  :key="item.path">{{
-            item.meta.title
-          }}</el-breadcrumb-item>
-        </template>
+        <el-breadcrumb-item
+          v-for="item in titleList"
+          :key="item.path"
+          :to="item.path"
+          >{{ item.meta.title }}</el-breadcrumb-item
+        >
       </transition-group>
     </el-breadcrumb>
   </div>
@@ -17,8 +18,8 @@ export default {
   computed: {
     titleList() {
       return this.$route.matched;
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

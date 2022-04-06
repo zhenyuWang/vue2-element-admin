@@ -24,33 +24,33 @@
   </div>
 </template>
 <script>
-import {apiChangePassword} from '@/api/user'
+import { apiChangePassword } from "@/api/user";
 export default {
-  name:'ChangePassword',
-  data () {
+  name: "ChangePassword",
+  data() {
     return {
-      param:{
+      param: {
         userId: this.$store.getters.userInfo.userId,
         oldPassword: "",
-        newPassword: "",
+        newPassword: ""
       },
       rules: {
         oldPassword: [
-          { required: true, message: "请输入原密码", trigger: "blur" },
+          { required: true, message: "请输入原密码", trigger: "blur" }
         ],
         newPassword: [
-          { required: true, message: "请输入新密码", trigger: "blur" },
-        ],
+          { required: true, message: "请输入新密码", trigger: "blur" }
+        ]
       },
-      submitLoading:false
-    }
+      submitLoading: false
+    };
   },
-  methods:{
-    cancel(){
-      this.$router.go(-1)
+  methods: {
+    cancel() {
+      this.$router.go(-1);
     },
-    submit(){
-      this.$refs.form.validate((valid) => {
+    submit() {
+      this.$refs.form.validate(valid => {
         if (valid) {
           this.submitLoading = true;
           apiChangePassword(this.param)
@@ -67,13 +67,15 @@ export default {
       });
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
-.change_password{
+.change_password {
   > .fontsize_20 {
     padding: 100px 0 30px;
   }
-  .el-form{width: 500px;}
+  .el-form {
+    width: 500px;
+  }
 }
 </style>

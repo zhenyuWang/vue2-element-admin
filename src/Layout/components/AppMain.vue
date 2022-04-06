@@ -20,11 +20,11 @@ import SliderBar from "./SliderBar/index.vue";
 import NavBar from "./NavBar/index.vue";
 export default {
   components: { SliderBar, NavBar },
-  data(){
+  data() {
     return {
-      cachedViews:this.$store.getters.cachedViews
-    }
-  },
+      cachedViews: this.$store.getters.cachedViews
+    };
+  }
 };
 </script>
 <style lang="scss" scoped>

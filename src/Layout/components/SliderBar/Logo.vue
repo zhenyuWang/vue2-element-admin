@@ -6,7 +6,7 @@
 </template>
 <script lang="ts">
 export default {
-  name: "Logo",
+  name: "Logo"
 };
 </script>
 <style lang="scss" scoped>

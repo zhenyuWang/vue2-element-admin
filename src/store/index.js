@@ -8,12 +8,9 @@ import tagsView from './modules/tagsView'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+  state: {},
+  mutations: {},
+  actions: {},
   getters,
   modules: {
     user,

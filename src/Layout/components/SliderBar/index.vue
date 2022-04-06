@@ -1,33 +1,29 @@
 <template>
   <el-aside :class="{ collapse: isCollapse }">
     <Logo />
-    <el-menu :default-active="$route.name" :collapse="isCollapse"
-    >
-      <template v-for="item in routes">
-        <SlideBarItem :key="item.path" :item="item" />
-      </template>
+    <el-menu :default-active="$route.name" :collapse="isCollapse">
+      <SlideBarItem v-for="item in routes" :key="item.path" :item="item" />
     </el-menu>
   </el-aside>
 </template>
 <script>
-import Logo from './Logo'
+import Logo from "./Logo";
 import SlideBarItem from "./Item.vue";
 export default {
-  name:'',
-  components: {Logo,SlideBarItem},
-  data () {
-    return {
-    }
+  name: "",
+  components: { Logo, SlideBarItem },
+  data() {
+    return {};
   },
-  computed:{
-    isCollapse(){
-      return this.$store.getters.isCollapse
+  computed: {
+    isCollapse() {
+      return this.$store.getters.isCollapse;
     },
-    routes(){
-      return this.$store.getters.routes
+    routes() {
+      return this.$store.getters.routes;
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .el-aside {
@@ -35,15 +31,17 @@ export default {
   background-color: #3477f2;
   overflow-x: hidden;
   transition: 0.4s;
-  /deep/ .el-menu-item>a>span,/deep/ .el-submenu__title>span{
-      position: relative;
-      right:0;
-      transition:right 1s;
-    }
+  /deep/ .el-menu-item > a > span,
+  /deep/ .el-submenu__title > span {
+    position: relative;
+    right: 0;
+    transition: right 1s;
+  }
   &.collapse {
     width: 64px !important;
-    /deep/ .el-menu-item>a>span,/deep/ .el-submenu__title>span{
-      right:-100px;
+    /deep/ .el-menu-item > a > span,
+    /deep/ .el-submenu__title > span {
+      right: -100px;
     }
   }
   // 菜单整体样式
@@ -56,20 +54,26 @@ export default {
         color: #3477f2;
       }
     }
-    .el-submenu{
-      &.is-active{
-        .el-submenu__title{
-          background-color: #1564F7;
-          &:hover{background-color: #fff;}
+    .el-submenu {
+      &.is-active {
+        .el-submenu__title {
+          background-color: #1564f7;
+          &:hover {
+            background-color: #fff;
+          }
         }
       }
-      .el-submenu__title{
-        color:#fff;
-        &:hover{
+      .el-submenu__title {
+        color: #fff;
+        &:hover {
           color: #3477f2;
-          i{color: #3477f2;}
+          i {
+            color: #3477f2;
+          }
         }
-          >i{color:#fff;}
+        > i {
+          color: #fff;
+        }
       }
     }
     // 菜单项样式

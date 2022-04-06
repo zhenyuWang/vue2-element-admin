@@ -1,4 +1,3 @@
-// 内容页主体框架
 <template>
   <AppMain />
 </template>
@@ -7,6 +6,6 @@ import AppMain from "./components/AppMain.vue";
 import ResizeMixin from "./mixin/resize";
 export default {
   components: { AppMain },
-  mixins: [ResizeMixin],
+  mixins: [ResizeMixin]
 };
 </script>

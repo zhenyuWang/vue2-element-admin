@@ -19,8 +19,12 @@
           <i v-if="item.meta && item.meta.icon" :class="item.meta.icon"></i>
           <span>{{ (item.meta && item.meta.title) || item.name }}</span>
         </template>
-        <template v-for="child in item.children">
-          <SliderBarItem :item="child" :key="child.name" />
+        <template>
+          <SliderBarItem
+            v-for="child in item.children"
+            :key="child.name"
+            :item="child"
+          />
         </template>
       </el-submenu>
     </template>

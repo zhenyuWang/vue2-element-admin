@@ -12,7 +12,7 @@
         </el-form-item>
         <el-form-item prop="name">
           <el-input
-            type="passwrod"
+            type="password"
             prefix-icon="el-icon-lock"
             v-model="param.password"
             placeholder="密码"
@@ -37,20 +37,20 @@ export default {
     return {
       param: {
         name: "",
-        password: "",
+        password: ""
       },
       rules: {
         name: [{ required: true, message: "请输入用户名", trigger: blur }],
-        password: [{ required: true, message: "请输入密码", trigger: blur }],
+        password: [{ required: true, message: "请输入密码", trigger: blur }]
       },
-      loginLoading: false,
+      loginLoading: false
     };
   },
   created() {},
   methods: {
     login(formName) {
       this.loginLoading = true;
-      this.$refs[formName].validate((valid) => {
+      this.$refs[formName].validate(valid => {
         if (valid) {
           this.$store.dispatch("user/login", this.param).then(() => {
             this.loginLoading = false;
@@ -60,8 +60,8 @@ export default {
           return false;
         }
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -75,19 +75,19 @@ export default {
       font-size: 30px;
     }
     /deep/ .el-form-item {
-        background-color: #283443;
-        border: 1px solid #434c58;
-        border-radius: 4px;
-        .el-input {
-          input{
-            height: 50px;
-            padding-right: 30px;
-            font-size: 16px;
-            background-color: transparent;
-            border: none;
-            color: #fff;
-          }
+      background-color: #283443;
+      border: 1px solid #434c58;
+      border-radius: 4px;
+      .el-input {
+        input {
+          height: 50px;
+          padding-right: 30px;
+          font-size: 16px;
+          background-color: transparent;
+          border: none;
+          color: #fff;
         }
+      }
     }
   }
 }

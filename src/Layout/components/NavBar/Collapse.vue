@@ -10,11 +10,14 @@ export default {
   computed: {
     isCollapse() {
       return this.$store.getters.isCollapse;
-    },
+    }
   },
-  methods:{
-    changeCollapse(){
-      this.$store.commit("setting/SET_COLLAPSE", !this.$store.getters.isCollapse);
+  methods: {
+    changeCollapse() {
+      this.$store.commit(
+        "setting/SET_COLLAPSE",
+        !this.$store.getters.isCollapse
+      );
     }
   }
 };

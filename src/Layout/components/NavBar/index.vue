@@ -16,14 +16,12 @@ import Breadcrumb from "./Breadcrumb.vue";
 import AvatarDropDown from "./AvatarDropDown.vue";
 import VisitedViews from "./VisitedViews.vue";
 export default {
-  name:'',
+  name: "",
   components: { Collapse, Breadcrumb, AvatarDropDown, VisitedViews },
-  data () {
-    return {
-
-    }
-  },
-}
+  data() {
+    return {};
+  }
+};
 </script>
 <style lang="scss" scoped>
 .navbar {

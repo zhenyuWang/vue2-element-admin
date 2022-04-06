@@ -3,7 +3,7 @@ export default {
   state: {
     // 缓存路由
     cachedViews: [],
-    // 固定tabbar的路由
+    // 固定tabBar的路由
     fixedVisitedViews: [],
     // 访问过的路由
     visitedViews: []
