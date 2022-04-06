@@ -1,7 +1,7 @@
 <template>
   <div class="login h_100 flex flex_justify_center">
     <div class="inner_box">
-      <div class="title c_fff bold t_center">系统登录</div>
+      <div class="title c_fff bold t-center">系统登录</div>
       <el-form ref="form" :model="param" :rules="rules">
         <el-form-item prop="name">
           <el-input

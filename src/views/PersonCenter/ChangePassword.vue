@@ -1,6 +1,6 @@
 <template>
   <div class="change_password">
-    <div class="fontsize_20 t_center">修改密码</div>
+    <div class="fontsize_20 t-center">修改密码</div>
     <el-form
       ref="form"
       :model="param"

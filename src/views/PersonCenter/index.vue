@@ -1,6 +1,6 @@
 <template>
   <div class="user_info pt_20">
-    <div class="pb_20 flex fontsize_18">
+    <div class="pb-20 flex fontsize_18">
       <div class="label">姓名：</div>
       <div>{{ userInfo.name }}</div>
     </div>

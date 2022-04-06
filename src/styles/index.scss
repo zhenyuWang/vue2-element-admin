@@ -106,7 +106,7 @@ li {
 .pr_20 {
   padding-right: 20px;
 }
-.pb_20 {
+.pb-20 {
   padding-bottom: 20px;
 }
 .pl_20 {
@@ -139,7 +139,7 @@ li {
 .center {
   margin: 0 auto;
 }
-.t_center {
+.t-center {
   text-align: center;
 }
 .t_justify {
@@ -206,7 +206,7 @@ li {
   display: flex;
 }
 // 水平 垂直 居中
-.flex_center {
+.flex-center {
   justify-content: center;
   align-items: center;
 }
@@ -235,7 +235,7 @@ li {
   justify-content: flex-end;
 }
 // 子元素垂直排列
-.flex_direction_column {
+.flex-direction-column {
   flex-direction: column;
 }
 // 子元素换行
