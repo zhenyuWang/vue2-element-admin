@@ -10,7 +10,7 @@
 
 #### 安装
 ```shell
-yarn
+yarn install
 ```
 #### 启动服务
 ```shell

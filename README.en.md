@@ -11,7 +11,7 @@ A background management system development framework based on `Vue2+Vue Router+V
 #### Installation
 
 ```shell
-yarn
+yarn install
 ```
 
 #### Start service
