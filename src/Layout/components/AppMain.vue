@@ -15,9 +15,11 @@
     </el-container>
   </section>
 </template>
+
 <script>
 import SliderBar from "./SliderBar/index.vue";
 import NavBar from "./NavBar/index.vue";
+
 export default {
   components: { SliderBar, NavBar },
   data() {
@@ -27,6 +29,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .app_main {
   height: 100%;
@@ -34,7 +37,6 @@ export default {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   }
 }
-/* fade-transform */
 .fade-transform-leave-active,
 .fade-transform-enter-active {
   transition: all 0.2s;

@@ -36,6 +36,7 @@
     </el-menu-item>
   </div>
 </template>
+
 <script>
 export default {
   name: "SliderBarItem",
@@ -56,6 +57,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .el-menu-item {
   a {

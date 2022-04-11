@@ -23,8 +23,10 @@
     </div>
   </div>
 </template>
+
 <script>
 import { apiChangePassword } from "@/api/user";
+
 export default {
   name: "ChangePassword",
   data() {
@@ -69,6 +71,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .change_password {
   > .font-size-20 {

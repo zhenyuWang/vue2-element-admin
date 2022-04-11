@@ -4,11 +4,13 @@
     <h1 class="pl_20 c_fff font-size-14">vue2-element-admin</h1>
   </div>
 </template>
-<script lang="ts">
+
+<script>
 export default {
   name: "Logo"
 };
 </script>
+
 <style lang="scss" scoped>
 .logo_box {
   width: 230px;

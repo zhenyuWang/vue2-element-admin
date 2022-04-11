@@ -19,8 +19,10 @@
     </el-form>
   </div>
 </template>
+
 <script>
 import { apiGetDetail, apiUpdate } from "@/api/list";
+
 export default {
   name: "ListEdit",
   props: {
@@ -46,13 +48,11 @@ export default {
     };
   },
   created() {
-    // 获取详情
     apiGetDetail({ id: this.id }).then(res => {
       this.param = res.body.data || {};
     });
   },
   methods: {
-    // 返回
     async goBack() {
       await this.$store.commit("tagsView/DELETE_CACHE_VIEW", this.$route.name);
       await this.$store.commit(
@@ -63,7 +63,6 @@ export default {
       await this.$store.commit("tagsView/DELETE_VISITED_VIEW", "List1");
       this.$router.push({ name: "List1" });
     },
-    // 编辑
     edit() {
       this.$refs.form.validate(valid => {
         if (valid) {
@@ -84,6 +83,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 /deep/ .el-form {
   width: 500px;

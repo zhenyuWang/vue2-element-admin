@@ -6,6 +6,7 @@
     </h1>
   </div>
 </template>
+
 <script>
 export default {
   name: "Home",
@@ -16,6 +17,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .box {
   padding-top: 100px;

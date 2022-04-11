@@ -10,6 +10,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "UserInfo",
@@ -20,6 +21,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .user_info {
   .label {

@@ -6,9 +6,11 @@
     </el-menu>
   </el-aside>
 </template>
+
 <script>
 import Logo from "./Logo";
 import SlideBarItem from "./Item.vue";
+
 export default {
   name: "",
   components: { Logo, SlideBarItem },
@@ -25,6 +27,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .el-aside {
   width: 230px !important;
@@ -44,7 +47,6 @@ export default {
       right: -100px;
     }
   }
-  // 菜单整体样式
   /deep/ .el-menu {
     max-width: 230px;
     background-color: transparent;
@@ -76,7 +78,6 @@ export default {
         }
       }
     }
-    // 菜单项样式
     .el-menu-item {
       &.is-active,
       &:hover {

@@ -10,6 +10,7 @@
     </el-dropdown-menu>
   </el-dropdown>
 </template>
+
 <script>
 export default {
   name: "",
@@ -24,15 +25,12 @@ export default {
       else if (command === "changePassword") this.changePassword();
       else if (command === "logout") this.logout();
     },
-    // 跳转用户信息页面
     goUserInfo() {
       this.$router.push({ name: "UserInfo" });
     },
-    // 跳转修改密码页面
     changePassword() {
       this.$router.push({ name: "ChangePassword" });
     },
-    // 退出登录
     logout() {
       this.$store.dispatch("user/logout").then(() => {
         this.$router.push({ name: "Login" });

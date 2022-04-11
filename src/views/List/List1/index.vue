@@ -31,8 +31,10 @@
     </el-pagination>
   </div>
 </template>
+
 <script>
 import { apiGetList, apiDel } from "@/api/list";
+
 export default {
   name: "List1",
   data() {

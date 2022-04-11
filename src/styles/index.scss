@@ -1,20 +1,16 @@
-// 修改滚动条样式
 * {
   margin: 0;
   padding: 0;
   &::-webkit-scrollbar {
-    // 滚动条整体样式
     width: 6px;
     height: 6px;
   }
   &::-webkit-scrollbar-thumb {
-    // 滚动条里面的条
     border-radius: 6px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     background: #3477f2;
   }
   &::-webkit-scrollbar-track {
-    // 滚动条里面轨道
     border-radius: 10px;
     background: #ffffff;
   }
@@ -60,9 +56,11 @@ div:focus {
 .block {
   display: block;
 }
+
 .pointer {
   cursor: pointer;
 }
+
 ul {
   margin: 0;
   padding: 0;
@@ -70,6 +68,7 @@ ul {
 li {
   list-style: none;
 }
+
 .w_100 {
   width: 100%;
 }
@@ -79,12 +78,15 @@ li {
 .w_150 {
   width: 150px !important;
 }
+
 .bg_fff {
   background-color: #fff;
 }
+
 .of {
   overflow: hidden;
 }
+
 .pl_5 {
   padding-left: 5px;
 }
@@ -112,6 +114,7 @@ li {
 .pl_20 {
   padding-left: 20px;
 }
+
 .mt_10 {
   margin-top: 10px;
 }
@@ -136,9 +139,11 @@ li {
 .ml_20 {
   margin-left: 20px;
 }
+
 .center {
   margin: 0 auto;
 }
+
 .t-center {
   text-align: center;
 }
@@ -157,6 +162,7 @@ li {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
 .bold {
   font-weight: bold;
 }
@@ -172,6 +178,7 @@ li {
 .c-3477F2 {
   color: #3477f2;
 }
+
 .border-t {
   border-top: 1px solid #dedede;
 }
@@ -184,6 +191,7 @@ li {
 .border-l {
   border-left: 1px solid #dedede;
 }
+
 .font-size-12 {
   font-size: 12px;
 }
@@ -202,43 +210,35 @@ li {
 .font-size-20 {
   font-size: 20px;
 }
+
 .flex {
   display: flex;
 }
-// 水平 垂直 居中
 .flex-center {
   justify-content: center;
   align-items: center;
 }
-// 垂直对齐 居中
 .flex-align-center {
   align-items: center;
 }
-// 垂直对齐 底部
 .flex-align-bottom {
   align-items: flex-end;
 }
-// 水平对齐 两端对齐
 .flex-justify-between {
   justify-content: space-between;
 }
-// 水平对齐 项目居中对齐
 .flex-justify-center {
   justify-content: center;
 }
-// 水平对齐 项目环绕对齐
 .flex-justify-around {
   justify-content: space-around;
 }
-// 水平对齐 项目靠右对齐
 .flex-content-end {
   justify-content: flex-end;
 }
-// 子元素垂直排列
 .flex-direction-column {
   flex-direction: column;
 }
-// 子元素换行
 .flex-wrap {
   flex-wrap: wrap;
 }

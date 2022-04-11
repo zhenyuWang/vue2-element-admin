@@ -10,6 +10,7 @@
     <VisitedViews />
   </div>
 </template>
+
 <script>
 import Collapse from "./Collapse.vue";
 import Breadcrumb from "./Breadcrumb.vue";
@@ -23,6 +24,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .navbar {
   > div:first-child {

@@ -32,52 +32,41 @@
     </ul>
   </div>
 </template>
+
 <script>
 export default {
   name: "",
   data() {
     return {
-      // 当前右键view
       mouseRightView: "",
-      // 右键菜单是否显示
       visible: false
     };
   },
   methods: {
-    // 跳转目标路由
     goTargetView(view) {
       this.$router.push(view.fullPath);
     },
-    // 删除已访问路由
     delTargetVisited(view) {
       this.$store.dispatch("tagsView/deleteVisitedView", view);
-      // 如果删除的是active路由，跳转访问路由最后一个
       if (view.name === this.$route.name) {
         const visitedViews = this.$store.getters.visitedViews;
         if (visitedViews && visitedViews.length)
           this.$router.push(visitedViews[visitedViews.length - 1]);
       }
     },
-    // 隐藏右键菜单
     hideMenu() {
       this.visible = false;
     },
-    // 显示右键菜单
     showMenu(left, top) {
-      // 浏览器添加click关闭右键菜单
       window.addEventListener("click", this.hideMenu);
       this.visible = true;
       this.$refs.menu.style.left = `${left}px`;
       this.$refs.menu.style.top = `${top + 10}px`;
     },
-    // 鼠标右键点击
     mouseRightClick(view, e) {
-      // 存储右键view
       this.mouseRightView = view;
-      // 显示右键菜单
       this.showMenu(e.clientX, e.clientY);
     },
-    // 刷新右键路由
     async refresh() {
       await this.$store.commit(
         "tagsView/DELETE_CACHE_VIEW",
@@ -90,11 +79,9 @@ export default {
         this.$router.push(this.mouseRightView);
       }
     },
-    // 关闭右键路由
     close() {
       this.delTargetVisited(this.mouseRightView);
     },
-    // 右键关闭其他
     closeOther() {
       this.$store.commit(
         "tagsView/DELETE_OTHER_VISITED_VIEW",
@@ -104,7 +91,6 @@ export default {
         this.$router.push(this.mouseRightView);
       }
     },
-    // 右键关闭所有
     closeAll() {
       this.$store.commit("tagsView/CLEAR_CACHE_VIEW");
       this.$store.commit("tagsView/CLEAR_VISITED_VIEW");
@@ -115,6 +101,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .visited_views {
   height: 30px;
