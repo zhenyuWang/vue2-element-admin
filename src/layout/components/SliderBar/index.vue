@@ -34,20 +34,20 @@ export default {
   background-color: #3477f2;
   overflow-x: hidden;
   transition: 0.4s;
-  /deep/ .el-menu-item > a > span,
-  /deep/ .el-submenu__title > span {
+  ::v-deep .el-menu-item > a > span,
+  ::v-deep .el-submenu__title > span {
     position: relative;
     right: 0;
     transition: right 1s;
   }
   &.collapse {
     width: 64px !important;
-    /deep/ .el-menu-item > a > span,
-    /deep/ .el-submenu__title > span {
+    ::v-deep .el-menu-item > a > span,
+    ::v-deep .el-submenu__title > span {
       right: -100px;
     }
   }
-  /deep/ .el-menu {
+  ::v-deep .el-menu {
     max-width: 230px;
     background-color: transparent;
     border: none;

@@ -76,7 +76,7 @@ export default {
       padding-bottom: 40px;
       font-size: 30px;
     }
-    /deep/ .el-form-item {
+    ::v-deep .el-form-item {
       background-color: #283443;
       border: 1px solid #434c58;
       border-radius: 4px;

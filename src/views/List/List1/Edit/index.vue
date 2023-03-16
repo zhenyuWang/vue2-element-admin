@@ -85,7 +85,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/deep/ .el-form {
+::v-deep .el-form {
   width: 500px;
   .el-input,
   .el-textarea {
