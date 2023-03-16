@@ -1,6 +1,6 @@
 {
   "name": "vue2-element-admin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "scripts": {
     "dev": "vue-cli-service serve --open",
